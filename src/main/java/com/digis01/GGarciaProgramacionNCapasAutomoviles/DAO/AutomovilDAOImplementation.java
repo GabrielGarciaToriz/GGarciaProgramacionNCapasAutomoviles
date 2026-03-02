@@ -3,8 +3,10 @@ package com.digis01.GGarciaProgramacionNCapasAutomoviles.DAO;
 import com.digis01.GGarciaProgramacionNCapasAutomoviles.ML.Result;
 import com.digis01.GGarciaProgramacionNCapasAutomoviles.ML.Automovil;
 import com.digis01.GGarciaProgramacionNCapasAutomoviles.ML.Agencia;
+
 import java.sql.ResultSet;
 import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.CallableStatementCallback;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -35,7 +37,6 @@ public class AutomovilDAOImplementation implements IAutomovil {
                     agencia.setIdAgencia(resultSet.getInt("IdAgencia"));
                     agencia.setNombre(resultSet.getString("Agencia"));
                     agencia.setDireccion(resultSet.getString("Direccion"));
-                    automovil.setAgencia(agencia);
                     result.objects.add(automovil);
 
                 }

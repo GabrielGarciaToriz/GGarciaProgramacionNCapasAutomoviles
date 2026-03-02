@@ -15,6 +15,5 @@ public class Automovil {
     private String Marca;
     private String Modelo;
     private String Year;
-    public Agencia Agencia;
 
 }
