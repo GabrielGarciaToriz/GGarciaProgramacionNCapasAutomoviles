@@ -37,6 +37,7 @@ public class AutomovilDAOImplementation implements IAutomovil {
                     agencia.setIdAgencia(resultSet.getInt("IdAgencia"));
                     agencia.setNombre(resultSet.getString("Agencia"));
                     agencia.setDireccion(resultSet.getString("Direccion"));
+                    automovil.setAgencia(agencia);
                     result.objects.add(automovil);
 
                 }

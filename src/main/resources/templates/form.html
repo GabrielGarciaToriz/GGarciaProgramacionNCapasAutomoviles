@@ -8,55 +8,58 @@
 </head>
 <body class="bg-light">
 
-    <div class="container mt-5">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                
-                <h2 class="mb-4">Registrar / Editar Automóvil</h2>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
 
-                <div class="card shadow-sm">
-                    <div class="card-body">
-                        <form th:action="@{/index/form}" th:object="${automovil}" method="post">
-                            
-                            <input type="hidden" th:field="*{IdAutomovil}">
+            <h2 class="mb-4">Registrar / Editar Automóvil</h2>
 
-                            <div class="mb-3">
-                                <label for="marca" class="form-label">Marca</label>
-                                <input type="text" class="form-control" id="marca" th:field="*{Marca}" placeholder="Ej. Toyota" required>
-                            </div>
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <form th:action="@{/index/form}" th:object="${automovil}" method="post">
 
-                            <div class="mb-3">
-                                <label for="modelo" class="form-label">Modelo</label>
-                                <input type="text" class="form-control" id="modelo" th:field="*{Modelo}" placeholder="Ej. Corolla" required>
-                            </div>
+                        <input type="hidden" th:field="*{IdAutomovil}">
 
-                            <div class="mb-3">
-                                <label for="year" class="form-label">Año</label>
-                                <input type="text" class="form-control" id="year" th:field="*{Year}" placeholder="Ej. 2024" required>
-                            </div>
+                        <div class="mb-3">
+                            <label for="marca" class="form-label">Marca</label>
+                            <input type="text" class="form-control" id="marca" th:field="*{Marca}"
+                                   placeholder="Ej. Toyota" required>
+                        </div>
 
-                            <div class="mb-4">
-                                <label for="agencia" class="form-label">Agencia</label>
-                                <select class="form-select" id="agencia" th:field="*{Agencia.IdAgencia}" required>
-                                    <option value="" disabled selected>Selecciona una agencia...</option>
-                                    <option th:each="agenciaOpt : ${agencias}" 
-                                            th:value="${agenciaOpt.IdAgencia}" 
-                                            th:text="${agenciaOpt.Nombre}">
-                                    </option>
-                                </select>
-                            </div>
+                        <div class="mb-3">
+                            <label for="modelo" class="form-label">Modelo</label>
+                            <input type="text" class="form-control" id="modelo" th:field="*{Modelo}"
+                                   placeholder="Ej. Corolla" required>
+                        </div>
 
-                            <div class="d-flex justify-content-between">
-                                <a th:href="@{/}" class="btn btn-secondary">Regresar</a>
-                                <button type="submit" class="btn btn-primary">Guardar</button>
-                            </div>
+                        <div class="mb-3">
+                            <label for="year" class="form-label">Año</label>
+                            <input type="text" class="form-control" id="year" th:field="*{Year}" placeholder="Ej. 2024"
+                                   required>
+                        </div>
 
-                        </form>
-                    </div>
+                        <div class="mb-4">
+                            <label for="agencia" class="form-label">Agencia</label>
+                            <select class="form-select" id="agencia" th:field="*{Agencia.IdAgencia}" required>
+                                <option value="0" disabled selected>Selecciona una agencia...</option>
+                                <option th:each="agenciaOpt : ${agencias}"
+                                        th:value="${agenciaOpt.IdAgencia}"
+                                        th:text="${agenciaOpt.Nombre}">
+                                </option>
+                            </select>
+                        </div>
+
+                        <div class="d-flex justify-content-between">
+                            <a th:href="@{/}" class="btn btn-secondary">Regresar</a>
+                            <button type="submit" class="btn btn-primary">Guardar</button>
+                        </div>
+
+                    </form>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
 </body>
 </html>
